@@ -32,6 +32,7 @@ router.beforeEach((to, from, next) => {
       if (response.data.success) {
         next();
       }else{
+        alert("請先登入帳戶");
         next({path: '/login'});
       }
     });

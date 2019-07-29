@@ -135,9 +135,9 @@ export default {
         }
       });
     },
-    uploadFile() {
+    uploadFile(v) {
       const vm = this;
-      const uploadedFile = this.$refs.files.files[0];
+      const uploadedFile = v.$refs.files.files[0];
       const formData = new window.FormData();
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/upload`;
 

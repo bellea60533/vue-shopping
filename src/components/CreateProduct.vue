@@ -175,7 +175,8 @@ export default {
       this.$emit("updateProduct");
     },
     uploadFile() {
-      this.$emit("uploadFile");
+      const vm = this;
+      this.$emit("uploadFile", vm);
     }
   }
 };

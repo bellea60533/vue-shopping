@@ -10,9 +10,26 @@
       />
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sign out</a>
+          <a class="nav-link" href="#" @click.prevent="signOut">Sign out</a>
         </li>
       </ul>
     </nav>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Navbar',
+  methods: {
+    signOut(){
+      const vm = this;
+      const api = `${process.env.VUE_APP_APIPATH}/logout`;
+      this.$http.post(api).then(response => {
+        if(response.data.success){
+          vm.$router.push('/signin');
+        }
+      });
+    }
+  },
+}
+</script>

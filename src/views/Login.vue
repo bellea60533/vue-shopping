@@ -50,6 +50,8 @@ export default {
         console.log(response.data);
         if(response.data.success){//如果回傳物件的登入狀態是成功
             vm.$router.push('/admin/products');//將網址路徑指到產品列表
+        }else{
+          alert("帳號或密碼錯誤，請重新登入");
         }
       });
     }
